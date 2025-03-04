@@ -1,27 +1,21 @@
-import { Container, SortPopup, Title, TopBar } from "@/components/shared";
-import { Categories } from "@/components/shared/categories";
-// import { Filters } from "@/components/filters";  
-// import { ProductList } from "@/components/productList"; 
+
+import { Container, Title, Filters } from "@/components/shared/";
+import { TopBar } from "@/components/shared/top-bar";
 
 export default function Home() {
   return (
     <>
-      <Container>
-        <Title text="Все пиццы" size="lg" className="font-extrabold" />
-      </Container>
+    <Container className="mt-10">
+      <Title size="lg" text="Все пиццы" className="font-black"/>
+    </Container>
+    <TopBar/>
+    <Container>
 
-      {}
-      <Container className="flex">
-        {}
-        <div className="w-1/4 p-4">
-          <Filters />
-        </div>
+      <div className="w-[250px]">
+        <Filters />
+      </div>
 
-        {}
-        <div className="w-3/4 p-4">
-          <ProductList />
-        </div>
-      </Container>
+    </Container>
     </>
   );
 }
