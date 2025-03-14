@@ -1,33 +1,28 @@
-import {cn} from "@/lib/utils"
+import {cn} from '@/lib/utils';
 
 interface Props {
-    ClassName?: string;
-
+    className?: string;
 }
 
-const cats = ['Пиццы','Комбо','Закуски','Коктели','Кофе','Напитки','Десерты'];
+const cats = ['Все', 'Мясные', 'Острые', 'Сладкие', 'Вегетарианские', 'С курицей', 'Ещё'];
 
 const activeIndex = 0;
 
-export const Categories: React.FC<Props> = ({ClassName})=> {
-    return(
-        <div className= {cn('inline-flex gap-2 bg-gray-50 p-1 rounded-2xl', ClassName)}>
-            {cats.map((cat, index) =>(
+export const Categories: React.FC<Props> = ({className}) => {
+    return (
+        <div className={cn('inline-flex gap-1 bg-gray-50 p-1 rounded-2xl', className)}>
+            {cats.map((cat, index)=> (
                 <a
-                key = {index}
-                className = {cn(
-                    'flex items-center font-bold h-11 rounded-2xl px-5',
-                    activeIndex === index && 'bg-white shadow-md shadow-gray-200 text-primary'
-
-                )}
+                    key={index}
+                    className={cn('flex items-center font-bold h-11 rounded-2xl px-5',
+                        activeIndex === index && 'bg-white shadow-md shadow-gray-200 text-primary'
+                    )}
                 >
-                <button>
-                    {}
-                    {cat}
-                </button>
-            </a>
+                    <button>
+                        {cat}
+                    </button>
+                </a>
             ))}
-            
         </div>
-    )
-}
+    );
+};
